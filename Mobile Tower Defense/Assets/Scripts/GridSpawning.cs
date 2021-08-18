@@ -5,12 +5,12 @@ using UnityEngine;
 public class GridSpawning : MonoBehaviour
 {
     public GameObject prefab;
-    public float gridX = 5f;
+    public float gridX = 9f;
     public float gridY = 5f;
-    public float spacingX = 2f;
+    public float spacingX = 1.6f;
     public float spacingY = 2f;
 
-    void Start()
+    void Awake()
     {
         for (int y = 0; y < gridY; y++)
         {
