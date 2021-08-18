@@ -8,6 +8,7 @@ public class TowerCard : MonoBehaviour
     public GameObject tower_Drag;
     public GameObject tower_Game;
     public GameObject ground;
+    public bool spawnedObject = false;
 
     private GameObject towerDragInstance;
 
@@ -31,18 +32,24 @@ public class TowerCard : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Debug.Log("noice");
             Touch touch = Input.GetTouch(0);
             Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 12));//z (12) is distance from camera
+            int id = touch.fingerId;          
 
-            if (touchedPos == this.transform.position)
+            if (EventSystem.current.IsPointerOverGameObject(id))//Currently takes whole panel in ui need to change to only do the actualy card/button
             {
-                if (touch.phase == TouchPhase.Began)//Read the UI tower panel and instatiate the tower prefab in the player touch point
+                Debug.Log(touch.phase);
+                if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Stationary)//Read the UI tower panel and instatiate the tower prefab in the player touch point
                 {
-                    //check touched ui tower element
-                    towerDragInstance = Instantiate(tower_Drag, ground.transform);
+                    if (!spawnedObject)
+                    {
+                        //check touched ui tower element
+                        towerDragInstance = Instantiate(tower_Drag, ground.transform);
 
-                    towerDragInstance.transform.position = touchedPos;
+                        towerDragInstance.transform.position = touchedPos;
+
+                        spawnedObject = true;
+                    }
                 }
 
                 if (touch.phase == TouchPhase.Moved)
@@ -53,7 +60,10 @@ public class TowerCard : MonoBehaviour
                 if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                 {
                     Destroy(towerDragInstance);
+                    spawnedObject = false;
                 }
+
+                Debug.Log(spawnedObject);
             }
         }
 
