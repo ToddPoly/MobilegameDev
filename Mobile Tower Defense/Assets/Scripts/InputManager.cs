@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     public bool spawnedObject = false;
     public LayerMask groundGridLayer;//set in editor
 
+    private MeshRenderer rend = null;
     public GameObject tower;
     private GameObject towerDragInstance;
 
@@ -60,23 +61,22 @@ public class InputManager : MonoBehaviour
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundGridLayer))//Only collides against groundGridLayer
                     {
-                        hitInfo.collider.GetComponent<MeshRenderer>().enabled = true;
-                        var hit = hitInfo.collider.name;
-                        if (hit != null)
-                        {
-                            Debug.Log(hit);
-                        }
+                        HighLight(hitInfo);
+                        
+
+
                     }
 
-                    towerDragInstance.transform.position = touchedPos;
+                    towerDragInstance.transform.position = touchedPos;                   
                 }
             }
 
-            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)//Read the raycast grid tile location from the moved or ended then spawn the held tower at that location then delete it in this class
+            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)//Read the raycast grid tile location from the moved or ended phase then pass the held tower gameobject to the tile at that location then delete it in this class
             {
                 Destroy(towerDragInstance);
                 tower = null;
                 spawnedObject = false;
+                rend.enabled = false;
             }
 
             //Debug.Log(spawnedObject);
@@ -87,4 +87,32 @@ public class InputManager : MonoBehaviour
     {
         tower = gameObject;
     }
+
+    public void HighLight(RaycastHit hitInfo)//Turns on the mesh renderer for the tile you are touching ie hightlighting it. Also checks if you are raycasting to the same tile or a new one
+    {
+        MeshRenderer curRend = hitInfo.collider.GetComponent<MeshRenderer>();
+
+        if (curRend == rend)
+            return;
+
+        if (curRend && curRend != rend)
+        {
+            if (rend)
+            {
+                rend.enabled = false;
+            }
+        }
+
+        if (curRend)
+            rend = curRend;
+        else
+            return;
+
+        rend.enabled = true;
+    }
 }
+
+
+
+
+
