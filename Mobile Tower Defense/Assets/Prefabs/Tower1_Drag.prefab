@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7116724548777064655}
   - component: {fileID: 2929205193172725244}
   - component: {fileID: -2503024597446988262}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tower1_Drag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour
 {
     public GameObject ground;
     public bool spawnedObject = false;
+    public LayerMask groundGridLayer;//set in editor
+
     public GameObject tower;
     private GameObject towerDragInstance;
 
@@ -19,7 +21,7 @@ public class InputManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touch.position);           
             int id = touch.fingerId;
 
-            Debug.Log(touch.phase);
+            //Debug.Log(touch.phase);
             if (touch.phase == TouchPhase.Began)
             {
                 if (EventSystem.current.IsPointerOverGameObject(id))//Checking if touch is on UI then will set tower only if a UI event has passed a gameobject to the class GetTower below
@@ -41,11 +43,11 @@ public class InputManager : MonoBehaviour
                     Debug.Log("Not UI");
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo))
-                    {
+                    {                      
                         var hit = hitInfo.collider.name;
                         if (hit != null)
                         {
-                            Debug.Log(hit);
+                            //Debug.Log(hit);
                         }
                     }
                 }
@@ -55,6 +57,17 @@ public class InputManager : MonoBehaviour
             {
                 if (spawnedObject)
                 {
+                    RaycastHit hitInfo;
+                    if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundGridLayer))//Only collides against groundGridLayer
+                    {
+                        hitInfo.collider.GetComponent<MeshRenderer>().enabled = true;
+                        var hit = hitInfo.collider.name;
+                        if (hit != null)
+                        {
+                            Debug.Log(hit);
+                        }
+                    }
+
                     towerDragInstance.transform.position = touchedPos;
                 }
             }
@@ -66,7 +79,7 @@ public class InputManager : MonoBehaviour
                 spawnedObject = false;
             }
 
-            Debug.Log(spawnedObject);
+            //Debug.Log(spawnedObject);
         }
     }
 
