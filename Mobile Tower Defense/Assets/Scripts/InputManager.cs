@@ -15,11 +15,16 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        TouchInputs();
+    }
+
+    public void TouchInputs()
+    {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 12));//z (12) is distance from camera
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);           
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
             int id = touch.fingerId;
 
             //Debug.Log(touch.phase);
@@ -39,12 +44,12 @@ public class InputManager : MonoBehaviour
                         spawnedObject = true;
                     }
                 }
-                else// Only run when not on UI, might at ability to move towers or upgrade/sell them later using a raycast on their colliders
+                else// Only run when not on UI, might add ability to move towers or upgrade/sell them later using a raycast on their colliders
                 {
                     Debug.Log("Not UI");
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo))
-                    {                      
+                    {
                         var hit = hitInfo.collider.name;
                         if (hit != null)
                         {
@@ -62,28 +67,34 @@ public class InputManager : MonoBehaviour
                     if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundGridLayer))//Only collides against groundGridLayer
                     {
                         HighLight(hitInfo);
-                        
-
-
                     }
-
-                    towerDragInstance.transform.position = touchedPos;                   
+                    towerDragInstance.transform.position = touchedPos;
                 }
             }
 
             if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)//Read the raycast grid tile location from the moved or ended phase then pass the held tower gameobject to the tile at that location then delete it in this class
             {
+                if (spawnedObject)
+                {
+                    RaycastHit hitInfo;
+                    if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundGridLayer))//Only collides against groundGridLayer
+                    {
+                        hitInfo.collider.gameObject.GetComponentInParent<ObjectContainer>().SetObject(tower);
+
+                        Debug.Log(hitInfo.collider.name);
+                    }
+                }
+
                 Destroy(towerDragInstance);
                 tower = null;
                 spawnedObject = false;
                 rend.enabled = false;
             }
-
             //Debug.Log(spawnedObject);
         }
     }
 
-    public void GetTower(GameObject gameObject)
+    public void GetTower(GameObject gameObject)//Passed from UI Event trigger
     {
         tower = gameObject;
     }
