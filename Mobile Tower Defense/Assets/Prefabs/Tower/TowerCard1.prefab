@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a001029e024fb9c47b13bb417f448dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower_Drag: {fileID: 0}
-  tower_GamePrefab: {fileID: 0}
+  tower: {fileID: 0}
+  tower_Icon: {fileID: 0}

@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
                     {
                         //check touched ui tower element
                         //Set tower towerDragInstance to the gameObject of the UI tower element you have touched
-                        towerDragInstance = Instantiate(tower, ground.transform);
+                        towerDragInstance = Instantiate(tower, transform.position, Quaternion.Euler(0,90,0), ground.transform);
 
                         towerDragInstance.transform.position = touchedPos;
 
@@ -79,7 +79,7 @@ public class InputManager : MonoBehaviour
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundGridLayer))//Only collides against groundGridLayer
                     {
-                        hitInfo.collider.gameObject.GetComponentInParent<ObjectContainer>().SetObject(tower);
+                        hitInfo.collider.gameObject.GetComponentInParent<ObjectContainer>().SetObject(tower);//Pass tower gameobject to ObjectContainer 
 
                         Debug.Log(hitInfo.collider.name);
                     }
@@ -122,8 +122,3 @@ public class InputManager : MonoBehaviour
         rend.enabled = true;
     }
 }
-
-
-
-
-

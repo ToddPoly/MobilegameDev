@@ -7,6 +7,8 @@ public class ObjectContainer : MonoBehaviour
     public bool isFull;
     public GameObject tower;
 
+    public float height = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,6 @@ public class ObjectContainer : MonoBehaviour
 
     public void SpawnObject()
     {
-        Instantiate(tower, this.transform.position, Quaternion.identity, this.transform);
+        Instantiate(tower, transform.position + new Vector3(0,height,0), Quaternion.Euler(0,90,0), this.transform);
     }
 }
