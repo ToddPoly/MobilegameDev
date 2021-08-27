@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tower : MonoBehaviour
+public abstract class Entity : MonoBehaviour //Base script used for taking damage and having health
 {
     public float maxHealth;
     protected float health;
