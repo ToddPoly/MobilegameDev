@@ -108,8 +108,9 @@ GameObject:
   - component: {fileID: 7116724548777064655}
   - component: {fileID: 2929205193172725244}
   - component: {fileID: -2503024597446988262}
-  m_Layer: 0
-  m_Name: Tower1
+  - component: {fileID: 6552859818301759439}
+  m_Layer: 10
+  m_Name: GunTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,3 +209,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6552859818301759439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182428088982236167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287f608ec6e2525439ee37c16e1633f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  isActive: 1
+  damage: 1
+  range: 0
+  attackSpeed: 1750
+  projectileSpeed: 3
+  projectileSpawn: {fileID: 4532391006785644862}
+  projectile: {fileID: 2959440989768460482, guid: 50469fb4a336219428896e5d2167c8d3, type: 3}

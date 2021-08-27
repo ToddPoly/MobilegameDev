@@ -5,9 +5,11 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour //Base script used for taking damage and having health
 {
     public float maxHealth;
-    protected float health;
+    [SerializeField] protected float health;
     protected bool dead;
     protected bool hit = false;
+
+    public bool isActive = false;
 
     protected virtual void Start()
     {

@@ -25,7 +25,7 @@ public class ObjectContainer : MonoBehaviour
     {
         if (!isFull && gameObject.tag == "Tower")
         {
-            tower = gameObject;
+            tower = gameObject;           
             SpawnObject();
             isFull = true;
         }
@@ -34,5 +34,6 @@ public class ObjectContainer : MonoBehaviour
     public void SpawnObject()
     {
         Instantiate(tower, transform.position + new Vector3(0,height,0), Quaternion.Euler(0,90,0), this.transform);
+        tower.GetComponent<Entity>().isActive = true;
     }
 }

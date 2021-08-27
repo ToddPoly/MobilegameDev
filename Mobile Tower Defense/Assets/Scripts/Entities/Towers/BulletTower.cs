@@ -7,8 +7,8 @@ public class BulletTower : Entity
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] private float attackSpeed;
-    [SerializeField] private float nextShotTime;
     [SerializeField] private float projectileSpeed;
+    private float nextShotTime;
 
     [SerializeField] private Transform projectileSpawn;//Where bullet comes out ie barrel
 
@@ -23,7 +23,7 @@ public class BulletTower : Entity
 
     private void Update()
     {
-        if (DetectEnemy())
+        if (DetectEnemy() && isActive)
         {
             Shoot();
         }

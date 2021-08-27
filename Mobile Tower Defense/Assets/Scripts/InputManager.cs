@@ -38,6 +38,7 @@ public class InputManager : MonoBehaviour
                         //check touched ui tower element
                         //Set tower towerDragInstance to the gameObject of the UI tower element you have touched
                         towerDragInstance = Instantiate(tower, transform.position, Quaternion.Euler(0,90,0), ground.transform);
+                        towerDragInstance.GetComponent<Entity>().isActive = false;
 
                         towerDragInstance.transform.position = touchedPos;
 
