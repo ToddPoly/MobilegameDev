@@ -8,6 +8,7 @@ public class BulletTower : Entity
     [SerializeField] private float range;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float projectileSpeed;
+    [SerializeField] private LayerMask enemyLayer ;
     private float nextShotTime;
 
     [SerializeField] private Transform projectileSpawn;//Where bullet comes out ie barrel
@@ -31,7 +32,8 @@ public class BulletTower : Entity
 
     public bool DetectEnemy()
     {
-        if (true)//Raycast down lane and detect if an enemy is present, if there is start the shoot method
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, enemyLayer))//Raycast down lane and detect if an enemy is present, if there is start the shoot method
         {
             return true;
         }

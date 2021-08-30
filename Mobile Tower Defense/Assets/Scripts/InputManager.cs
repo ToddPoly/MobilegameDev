@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
                         towerDragInstance = Instantiate(tower, transform.position, Quaternion.Euler(0,90,0), ground.transform);
                         towerDragInstance.GetComponent<Entity>().isActive = false;
 
-                        towerDragInstance.transform.position = touchedPos;
+                        towerDragInstance.transform.position = new Vector3(touchedPos.x, 1, touchedPos.z);//sets position to 1 above the gameboard, make variable if need to use more
 
                         spawnedObject = true;
                     }
@@ -69,7 +69,7 @@ public class InputManager : MonoBehaviour
                     {
                         HighLight(hitInfo);
                     }
-                    towerDragInstance.transform.position = touchedPos;
+                    towerDragInstance.transform.position = new Vector3(touchedPos.x, 1, touchedPos.z);//sets position to 1 above the gameboard, make variable if need to use more
                 }
             }
 

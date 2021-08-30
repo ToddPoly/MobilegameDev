@@ -222,10 +222,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  health: 0
   isActive: 1
   damage: 1
-  range: 0
+  range: 20
   attackSpeed: 1750
   projectileSpeed: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
   projectileSpawn: {fileID: 4532391006785644862}
   projectile: {fileID: 2959440989768460482, guid: 50469fb4a336219428896e5d2167c8d3, type: 3}
