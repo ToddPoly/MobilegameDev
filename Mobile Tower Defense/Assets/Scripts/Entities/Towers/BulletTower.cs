@@ -16,7 +16,6 @@ public class BulletTower : Entity
     public Projectile projectile;
 
     //Maybe add kills stat later
-
     protected override void Start()
     {
         base.Start();

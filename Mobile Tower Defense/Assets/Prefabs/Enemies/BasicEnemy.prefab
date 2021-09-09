@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5058185686006777542}
   - component: {fileID: 5058185686006777543}
   m_Layer: 9
-  m_Name: Enemy1
+  m_Name: BasicEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   maxHealth: 5
   health: 0
   isActive: 0
+  pointValue: 5
   damage: 1
   moveSpeed: 1
   attackSpeed: 1

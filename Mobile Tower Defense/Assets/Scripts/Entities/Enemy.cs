@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    public float pointValue;
     [SerializeField] private float damage;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float attackSpeed;
@@ -11,9 +12,9 @@ public class Enemy : Entity
     [SerializeField] private float attackRange;
     [SerializeField] private LayerMask towerLayer;
 
-    protected override void Start()
-    {
 
+    protected override void Start()//doesnt need to be here currently
+    {
         base.Start();
     }
 

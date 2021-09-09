@@ -30,6 +30,12 @@ public abstract class Entity : MonoBehaviour //Base script used for taking damag
         }
     }
 
+    public virtual float Heal(float healAmount)
+    {
+        health += healAmount;
+        return health = Mathf.Clamp(health, 0f, maxHealth);//Clamp sets the min and max values for a given number/float
+    }
+
     protected virtual void Die()
     {
         dead = true;
