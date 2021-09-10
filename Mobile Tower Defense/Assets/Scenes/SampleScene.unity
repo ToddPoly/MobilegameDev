@@ -2735,9 +2735,11 @@ MonoBehaviour:
   - {fileID: 1859391480}
   enemyTypes:
   - {fileID: 5058185686006777537, guid: 4cbf2c9a375f38746b1f5f0b522ff302, type: 3}
+  - {fileID: 7332504634500633036, guid: 4d257f35133c6f54cb1d7b891af60b70, type: 3}
+  - {fileID: 3109450767456115826, guid: 5f3f94ddaf1ca0544bff185220e4021e, type: 3}
   spawnTime: 2
   NextSpawnTime: 0
-  wavePoints: 50
+  wavePoints: 0
 --- !u!1001 &1207755274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3276,6 +3278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1414258691}
   - component: {fileID: 1414258692}
+  - component: {fileID: 1414258693}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3315,6 +3318,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   tower: {fileID: 0}
+--- !u!114 &1414258693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414258690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f06b91031e1b5b4ba94117cd35c7556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1167946760}
+  waveCount: 5
+  curWaveCount: 0
+  waveMultiplier: 10
+  timeBetweenWaves: 1
 --- !u!1001 &1425416969
 PrefabInstance:
   m_ObjectHideFlags: 0

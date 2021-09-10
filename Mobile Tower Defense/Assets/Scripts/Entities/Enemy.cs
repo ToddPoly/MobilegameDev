@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    public float pointValue;
+    #region Events
+    public delegate void OnEnemyDeath(float pointValue);
+    public static event OnEnemyDeath EnemyDeath;
+
+    #endregion
+
+    public int pointValue;//only mulitpes of 5
     [SerializeField] private float damage;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float attackSpeed;
@@ -13,9 +19,13 @@ public class Enemy : Entity
     [SerializeField] private LayerMask towerLayer;
 
 
-    protected override void Start()//doesnt need to be here currently
+    #region Builtin Methods
+    private void OnValidate()//checks if pointValue is a multiple of 5 so it doesnt break the spawning while loop
     {
-        base.Start();
+        if (pointValue % 5 != 0)
+        {
+            pointValue = pointValue - (pointValue % 5);
+        }
     }
 
     void Update()
@@ -40,11 +50,25 @@ public class Enemy : Entity
         }  
     }
 
+
+    #endregion
+
+    #region Custom Methods
+
     public void Move()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
     }
 
+    protected override void Die()
+    {
+        EnemyDeath?.Invoke(pointValue);//when an enemy dies it sends its point value to the wave manager to use
+        base.Die();
+    }
+
+    #endregion
+
+    #region Coroutines
     IEnumerator Attack(Entity entity)
     {
         //Play attacking animation on loop
@@ -66,4 +90,6 @@ public class Enemy : Entity
             yield return null;
         }
     }
+
+    #endregion
 }
