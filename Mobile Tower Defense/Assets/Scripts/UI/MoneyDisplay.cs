@@ -9,7 +9,7 @@ public class MoneyDisplay : MonoBehaviour
 
     private void Start()
     {
-        moneyDisplay = GetComponentInChildren<TextMeshProUGUI>();
+        
     }
 
     public void DisplayMoney(int money)
@@ -19,6 +19,8 @@ public class MoneyDisplay : MonoBehaviour
 
     private void OnEnable()
     {
+        moneyDisplay = GetComponentInChildren<TextMeshProUGUI>();
+
         MoneyManager.OnMoneyChanged += DisplayMoney;
     }
 
