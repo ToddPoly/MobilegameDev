@@ -10,6 +10,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private int waveMultiplier;
     [SerializeField] private float timeBetweenWaves;
 
+    [SerializeField] private bool firstWave = true;
+    [SerializeField] private float timeBeforeFirstWave;
+
     public float enemiesKilled { get; private set; }//stat shown on UI
     public float waveProgress { get; private set; }//A bar that has the total wave points and when an enemy dies it removes that enemies point value from the bar 
     public float maxWaveProgress { get; private set; }
@@ -17,6 +20,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         curWaveCount = 0;
+        firstWave = true;
         StartCoroutine(WaitNewWave());
     }
 
@@ -55,6 +59,12 @@ public class WaveManager : MonoBehaviour
     IEnumerator WaitNewWave()
     {
         yield return new WaitForSeconds(timeBetweenWaves);
+        if (firstWave)
+        {
+            yield return new WaitForSeconds(timeBeforeFirstWave);
+            firstWave = false;
+        }
+
         if (curWaveCount != waveCount)
         {
             curWaveCount++;

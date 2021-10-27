@@ -113,5 +113,5 @@ MonoBehaviour:
   isActive: 1
   cost: 25
   moneyPerTick: 5
-  tickRate: 5
+  tickRate: 3
   timer: 0

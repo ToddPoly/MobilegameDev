@@ -13,6 +13,13 @@ public class InputManager : MonoBehaviour
     public GameObject tower;
     private GameObject towerDragInstance;
 
+    public MoneyManager moneyManager;
+
+    private void Start()
+    {
+        moneyManager = GetComponent<MoneyManager>();
+    }
+
     private void Update()
     {
         TouchInputs();
@@ -33,7 +40,7 @@ public class InputManager : MonoBehaviour
                 if (EventSystem.current.IsPointerOverGameObject(id))//Checking if touch is on UI then will set tower only if a UI event has passed a gameobject to the class GetTower below
                 {
                     Debug.Log("On UI");
-                    if (!spawnedObject && tower)
+                    if (!spawnedObject && tower && moneyManager.TrySpendMoney(tower.GetComponent<Tower>().cost))
                     {
                         //check touched ui tower element
                         //Set tower towerDragInstance to the gameObject of the UI tower element you have touched

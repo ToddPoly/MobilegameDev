@@ -7,7 +7,12 @@ public class MoneyManager : MonoBehaviour
     public delegate void OnMoneyChange(int money);
     public static event OnMoneyChange OnMoneyChanged;
 
-    [SerializeField] private int playerMoney;
+    public int playerMoney;
+
+    private void Start()
+    {
+        OnMoneyChanged?.Invoke(playerMoney);
+    }
 
     public void AddPlayerMoney(int addAmount)
     {
