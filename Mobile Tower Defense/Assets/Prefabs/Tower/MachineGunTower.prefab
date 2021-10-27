@@ -113,6 +113,7 @@ MonoBehaviour:
   maxHealth: 5
   health: 0
   isActive: 1
+  cost: 200
   damage: 1
   range: 20
   attackSpeed: 875

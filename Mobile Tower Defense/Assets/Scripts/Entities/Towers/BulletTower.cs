@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTower : Entity
+public class BulletTower : Tower
 {
     [SerializeField] private float damage;
     [SerializeField] private float range;
