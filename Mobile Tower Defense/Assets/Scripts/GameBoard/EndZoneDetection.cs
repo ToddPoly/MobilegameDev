@@ -13,7 +13,7 @@ public class EndZoneDetection : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             OnEnemyEntered?.Invoke();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(1000);
         }
     }
 }

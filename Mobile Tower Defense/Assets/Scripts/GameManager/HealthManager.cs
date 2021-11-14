@@ -22,6 +22,7 @@ public class HealthManager : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player died. You Lose");
+            Time.timeScale = 0;
         }
     }
 

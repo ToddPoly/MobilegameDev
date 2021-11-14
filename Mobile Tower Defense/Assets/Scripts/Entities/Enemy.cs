@@ -31,7 +31,7 @@ public class Enemy : Entity
     void Update()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, attackRange, towerLayer))
+        if (Physics.SphereCast(transform.position, 0.1f, transform.forward, out hitInfo, attackRange, towerLayer))
         {
             var hit = hitInfo.collider.GetComponent<Entity>();
             if (hit)
