@@ -111,6 +111,6 @@ MonoBehaviour:
   maxHealth: 20
   health: 50
   isActive: 1
-  cost: 0
+  cost: 50
   regenAmount: 1
   waitPeriod: 3
