@@ -628,6 +628,10 @@ PrefabInstance:
       propertyPath: cost
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3803369999650225366, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: name
+      value: Wall Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225367, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -719,6 +723,14 @@ PrefabInstance:
     - target: {fileID: 3838199077587096677, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
@@ -1521,6 +1533,10 @@ PrefabInstance:
       propertyPath: cost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3803369999650225366, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: name
+      value: Mining Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225367, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1612,6 +1628,18 @@ PrefabInstance:
     - target: {fileID: 3838199077587096677, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_text
+      value: Cost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
@@ -5484,6 +5512,10 @@ PrefabInstance:
       propertyPath: cost
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3803369999650225366, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: name
+      value: Machinegun Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225367, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5575,6 +5607,14 @@ PrefabInstance:
     - target: {fileID: 3838199077587096677, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
@@ -6047,6 +6087,10 @@ PrefabInstance:
       propertyPath: cost
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 3803369999650225366, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: name
+      value: Gun Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225367, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6134,6 +6178,14 @@ PrefabInstance:
     - target: {fileID: 3838199077587096677, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608000176045717097, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
