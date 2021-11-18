@@ -18,7 +18,11 @@ public class ObjectContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!GetComponentInChildren<Tower>())
+        {
+            isFull = false;
+            tower = null;
+        }
     }
 
     public void SetObject(GameObject gameObject)
