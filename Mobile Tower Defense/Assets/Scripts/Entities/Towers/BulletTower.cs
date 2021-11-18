@@ -32,7 +32,7 @@ public class BulletTower : Tower
     public bool DetectEnemy()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, enemyLayer))//Raycast down lane and detect if an enemy is present, if there is start the shoot method
+        if (Physics.SphereCast(transform.position, 1, transform.forward, out hitInfo, range, enemyLayer))//Raycast down lane and detect if an enemy is present, if there is start the shoot method
         {
             return true;
         }
