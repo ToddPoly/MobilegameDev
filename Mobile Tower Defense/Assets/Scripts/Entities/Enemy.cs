@@ -18,6 +18,8 @@ public class Enemy : Entity
     [SerializeField] private float attackRange;
     [SerializeField] private LayerMask towerLayer;
 
+    public GameObject raycastPosition;
+
 
     #region Builtin Methods
     private void OnValidate()//checks if pointValue is a multiple of 5 so it doesnt break the spawning while loop
@@ -31,7 +33,7 @@ public class Enemy : Entity
     void Update()
     {
         RaycastHit hitInfo;
-        if (Physics.SphereCast(transform.position, 0.1f, transform.forward, out hitInfo, attackRange, towerLayer))
+        if (Physics.SphereCast(raycastPosition.transform.position, 0.1f, transform.forward, out hitInfo, attackRange, towerLayer))
         {
             var hit = hitInfo.collider.GetComponent<Entity>();
             if (hit)
