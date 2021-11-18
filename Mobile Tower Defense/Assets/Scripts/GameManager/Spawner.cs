@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private float spawnTime;
     [SerializeField] private float NextSpawnTime;
+    [SerializeField] private float scale;
 
     public int wavePoints;
 
@@ -65,5 +66,27 @@ public class Spawner : MonoBehaviour
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
         Instantiate(enemy, spawnPoint);
+    }
+
+    public void ChangeSpawnTime(int wave)
+    {
+        if (spawnTime > 0)
+        {
+            spawnTime -= scale; 
+        }
+        else if (spawnTime <= 0)
+        {
+            spawnTime = 0;
+        }
+    }
+
+    private void OnEnable()
+    {
+        WaveManager.OnWaveChanged += ChangeSpawnTime;
+    }
+
+    private void OnDisable()
+    {
+        WaveManager.OnWaveChanged -= ChangeSpawnTime;
     }
 }

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public delegate void OnWaveChange(int maxWave, int curWave);
+    public delegate void OnWaveChange(int curWave);
     public static event OnWaveChange OnWaveChanged;
 
     [SerializeField] private Spawner spawner;
-    [SerializeField] private int waveCount;
     [SerializeField] private int curWaveCount;
     [SerializeField] private int waveMultiplier;
     [SerializeField] private float timeBetweenWaves;
@@ -25,7 +24,7 @@ public class WaveManager : MonoBehaviour
         curWaveCount = 0;
         firstWave = true;
 
-        OnWaveChanged?.Invoke(waveCount, curWaveCount);
+        OnWaveChanged?.Invoke(curWaveCount);
         StartCoroutine(WaitNewWave());
     }
 
@@ -34,7 +33,7 @@ public class WaveManager : MonoBehaviour
         spawner.wavePoints = (curWaveCount * waveMultiplier) * curWaveCount;//may need to adjust later
         maxWaveProgress = spawner.wavePoints;
         waveProgress = maxWaveProgress;
-        OnWaveChanged?.Invoke(waveCount, curWaveCount);
+        OnWaveChanged?.Invoke(curWaveCount);
     }
 
     private void SetProgress(float pointValue)
@@ -71,10 +70,7 @@ public class WaveManager : MonoBehaviour
             firstWave = false;
         }
 
-        if (curWaveCount != waveCount)
-        {
-            curWaveCount++;
-            CreateWave();
-        }
+        curWaveCount++;
+        CreateWave();
     }
 }

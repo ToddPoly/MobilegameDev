@@ -7,9 +7,9 @@ public class WaveDisplay : MonoBehaviour
 {
     public TextMeshProUGUI waveDisplay;
 
-    public void DisplayWave(int maxWave, int curWave)
+    public void DisplayWave(int curWave)
     {
-        waveDisplay.text = curWave.ToString() + '/' + maxWave.ToString() + " Wave";
+        waveDisplay.text = curWave.ToString() + " Wave";
     }
 
     private void OnEnable()

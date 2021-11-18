@@ -3310,6 +3310,7 @@ MonoBehaviour:
   - {fileID: 3109450767456115826, guid: 5f3f94ddaf1ca0544bff185220e4021e, type: 3}
   spawnTime: 2
   NextSpawnTime: 0
+  scale: 0.2
   wavePoints: 0
 --- !u!1001 &1207755274
 PrefabInstance:
@@ -3905,12 +3906,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1167946760}
-  waveCount: 5
   curWaveCount: 0
-  waveMultiplier: 10
+  waveMultiplier: 5
   timeBetweenWaves: 1
   firstWave: 0
-  timeBeforeFirstWave: 0
+  timeBeforeFirstWave: 20
 --- !u!114 &1414258694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3923,7 +3923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de9234564e90584f8cd8d75ceb5fa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoney: 25
+  playerMoney: 50
 --- !u!114 &1414258695
 MonoBehaviour:
   m_ObjectHideFlags: 0
