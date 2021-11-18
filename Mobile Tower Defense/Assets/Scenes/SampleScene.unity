@@ -3910,7 +3910,7 @@ MonoBehaviour:
   waveMultiplier: 10
   timeBetweenWaves: 1
   firstWave: 0
-  timeBeforeFirstWave: 25
+  timeBeforeFirstWave: 0
 --- !u!114 &1414258694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4200,6 +4200,7 @@ GameObject:
   - component: {fileID: 1615534481}
   - component: {fileID: 1615534482}
   - component: {fileID: 1615534483}
+  - component: {fileID: 1615534484}
   m_Layer: 0
   m_Name: EndZone
   m_TagString: Untagged
@@ -4229,11 +4230,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615534480}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 4, z: 10}
+  m_Center: {x: -1.8563194, y: 0, z: 0}
 --- !u!114 &1615534483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4246,6 +4247,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b7d6653c70d8b4f9a341fa5a9092e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1615534484
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615534480}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1001 &1639568281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5402,7 +5419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225366, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: cost
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3803369999650225367, guid: 99c9cfc8f3b067a43a01d26cef4570b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -112,6 +112,6 @@ MonoBehaviour:
   health: 0
   isActive: 1
   cost: 25
-  moneyPerTick: 5
-  tickRate: 2
+  moneyPerTick: 10
+  tickRate: 1
   timer: 0

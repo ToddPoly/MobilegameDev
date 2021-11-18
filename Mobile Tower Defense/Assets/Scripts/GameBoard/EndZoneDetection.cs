@@ -16,4 +16,14 @@ public class EndZoneDetection : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().TakeDamage(1000);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("col hit");
+        if (other.gameObject.tag == "Enemy")
+        {
+            OnEnemyEntered?.Invoke();
+            other.gameObject.GetComponent<Enemy>().TakeDamage(1000);
+        }
+    }
 }
